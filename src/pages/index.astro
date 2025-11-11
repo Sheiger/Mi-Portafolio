@@ -2,9 +2,38 @@
 import BaseLayout from "../layouts/BaseLayout.astro"
 ---
 
-<BaseLayout title="Inicio">
+<BaseLayout title="Inicio - Ingeniero de Software">
 
-	<h1>Hola, soy Emerson Quispe</h1>
-	<p>Bienvenido a mi portafolio. Soy un ingeniero de Software...</p>
+	<section class="min-h-[70vh] flex flex-col md:flex-row items-center">
+		<div class="flex-1 md:pr-8">
+			<span class="text-sm font-semibold text-blue-600 dark:text-blue-400">
+				Hola, Mi nombre es
+			</span>
+
+			<h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mt-2 mb-4">
+				Emerson Quispe
+			</h1>
+
+			<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
+				Soy un Ingenierode Software de Perú especializado en crear aplicaciones web modernas, eficientes y escalables
+			</p>
+
+			<div class="flex space-x-4">
+				<a href="/projects" class="bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+					Ver Proyectos
+				</a>
+				<a href="/about" class="bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-lg hover:bg-gray-300 transition duration-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600">
+					Sobre Mí
+				</a>
+
+			</div>
+
+		</div>
+
+		<div class="mt-8 md:mt-0">
+			<img src="/images/perfil.png" alt="Foto de Emerson" class="w-64 h-64 md:w-80 rounded-lg shadow-lg object-cover">
+		</div>
+
+	</section>
 
 </BaseLayout>

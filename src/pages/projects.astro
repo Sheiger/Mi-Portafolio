@@ -1,10 +1,66 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+
+//Importamos la interfaz para asegurar que nuestros datos son correctos
+import type { Props as ProjectCardProps} from '../components/ProjectCard.astro';
+
+// ----ARRAY TEMPORAL DE DATA---
+const myProjects: ProjectCardProps [] = [
+    {
+        title: "Proyecto E-commerce de Repostería",
+        description: "Tienda de línea para una pasteleria local",
+        imgSrc: "/images/baner.png",
+        tags: ["React", "PHP", "MySql", "Tailwind CSS"],
+        demoUrl: "#",
+        githubUrl: "#",
+    },
+    {
+        title: "Sistema de notificaciones",
+        description: "Servicio de backend que usa websocket",
+        imgSrc: "/images/baner.png",
+        tags: ["JavaScript", "Node.js", "WebSockets", "Redis"],
+        githubUrl: "#",
+    },
+    {
+        title: "Proyecto E-commerce de Repostería",
+        description: "Tienda de línea para una pasteleria local",
+        imgSrc: "/images/baner.png",
+        tags: ["React", "PHP", "MySql", "Tailwind CSS"],
+        demoUrl: "#",
+        githubUrl: "#",
+    },
+    {
+        title: "Proyecto E-commerce de Repostería",
+        description: "Tienda de línea para una pasteleria local",
+        imgSrc: "/images/baner.png",
+        tags: ["React", "PHP", "MySql", "Tailwind CSS"],
+        demoUrl: "#",
+        githubUrl: "#",
+    },
+]
 ---
 
 <BaseLayout title="Mis Proyectos">
 
-    <h1>Mis proyectos</h1>
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold mb-2">Mis Proyectos</h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300">
+            Una selección de mi trabajo.
+        </p>
+    </div>
     
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {myProjects.map((project) => (
+            <ProjectCard 
+            title = {project.title}
+            description = {project.description}
+            imgSrc = {project.imgSrc}
+            tags = {project.tags}
+            demoUrl = {project.demoUrl}
+            githubUrl= {project.githubUrl}
+            />
+        ))}
+    </div>
 
 </BaseLayout>
